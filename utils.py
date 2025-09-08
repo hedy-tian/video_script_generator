@@ -1,8 +1,3 @@
-import os
-# 将下面的地址和端口换成你自己的代理
-os.environ['HTTP_PROXY'] = 'http://127.0.0.1:1080'
-os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:1080'
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.utilities import WikipediaAPIWrapper
@@ -44,5 +39,6 @@ def generate_script(subject,video_length,creativity,api_key):
                                   "wikipedia_search":search_result}).content
 
     return script, title, search_result
+
 
 # print(generate_script("七夕",3,1,os.getenv("GOOGLE_API_KEY")))
